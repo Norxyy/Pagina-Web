@@ -1,45 +1,60 @@
 body {
     margin: 0;
+    /* Remove margens e preenchimentos padrão */
     padding: 0;
+    /* Remove margens e preenchimentos padrão */
     font-family: Arial, sans-serif;
+    /* Define a família de fontes padrão como Arial ou fontes genéricas do tipo sans-serif*/
 }
 
 .container {
     display: flex;
+    /* Define o container como um flex container */
     justify-content: space-between;
+    /* Alinha os itens filhos com espaçamento uniforme entre eles */
     align-items: center;
+    /* Centraliza verticalmente os itens filhos */
     padding: 10px;
+    /* Adiciona um preenchimento interno de 10 pixels */
     background-color: #FFECD1;
+    /* Define a cor de fundo */
+    position: fixed;
+    /* Fixa o cabeçalho na tela */
+    top: 0;
+    /* Coloca o cabeçalho no topo da tela */
+    width: 100%;
+    /* Define a largura do cabeçalho como 100% da largura da tela */
+    z-index: 1000;
+    /* Define a ordem de empilhamento do cabeçalho (quanto maior, mais na frente) */
 }
 
 .logo img {
-    width: 100px;
-    height: auto;
-    font-weight: bold;
-    margin-left: 10px;
+    width: 100px; /* Define a largura da imagem como 100 pixels e a altura ajustável automaticamente para manter a proporção */ height: auto;
+    font-weight: bold; /* Define o estilo da fonte como negrito */
+    margin-left: 10px; /* Adiciona uma margem à esquerda */
 }
 
 nav ul {
     display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    flex-direction: row; /* Define a direção dos itens como horizontal */
+    list-style: none; /* Remove os marcadores de lista padrão. */
+    margin: 0; /* Remove margens e preenchimentos padrão. */
+    padding: 0;/*  Remove margens e preenchimentos padrão. */
 }
 
 nav ul li {
-    display: inline-block;
-    margin-right: 100px;
+    display: inline-block;  /* Exibe os itens como blocos, mas permite que outros elementos fiquem ao lado deles */
+    margin-right: 100px; /* Adiciona uma margem à direita */
 }
 
 nav ul li:last-child {
-    margin-right: 0;
+    margin-right: 0; /* Remove a margem à direita para evitar espaçamento extra após o último item. */
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #8E4700;
-    font-size: 16px;
+    text-decoration: none; /* Remove a decoração de texto (sublinhado) dos links. */
+    color: #8E4700; /* Define a cor do texto */
+    font-size: 24px; /* Define o tamanho da fonte */
 }
 
 nav ul li a:hover {
@@ -52,46 +67,44 @@ nav ul li a:hover {
     display: flex;
     background-color: #663300;
     color: #fff;
-    border: none;
-    padding: 5px 20px;
-    font-size: 16px;
-    border-radius: 20px;
-    margin-right: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Adicionando uma sombra */
+    border: none;  /* Remove a borda do botão. */
+    padding: 5px 20px;  /* Define o preenchimento interno do botão. */
+    font-size: 20px;
+    border-radius: 20px; /* Arredonda os cantos do botão. */
+    margin-right: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    cursor: pointer; /* Altera o cursor do mouse para uma mão indicando que o botão é clicável. */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao botão para dar um efeito de profundidade. */
 }
 
 .btn-comprar:hover {
     background-color: #F07C00;
 }
 
-main{
+main {
     display: flex;
+    margin: 0;
+    padding: 0;
     flex-direction: column;
+    /* Alterando a direção para coluna para que as seções fiquem empilhadas verticalmente */
 }
 
 .banner-content {
     width: 100%;
     height: 100%;
     text-align: center;
-    position: absolute;
-    z-index: 3;
+    position: absolute; /* Posiciona o elemento de forma absoluta em relação ao seu contêiner pai. */
+    z-index: 3; /* Controla a ordem de empilhamento do elemento. */
     top: 0px;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
-.banner-content h1{
+.banner-content h1 {
     color: #FFECD1;
     font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
-}
-
-.banner-img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
 }
 
 .banner-overlay {
@@ -103,10 +116,19 @@ main{
     opacity: 0.6;
 }
 
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    height: 100vh;
+}
+
 .banner-logo {
     width: 400px;
     display: block;
+    /* Isso garante que a imagem não será afetada por margens laterais */
     margin: 0 auto;
+    /* Define margens superior e inferior como 0 e margens laterais automáticas para centralizar a imagem */
     margin-top: 15%;
 }
 
@@ -125,7 +147,6 @@ main{
 .btn-ingresso:hover {
     background-color: #F07C00;
     border: 3px solid #FFBF75;
-    color: #fff;
 }
 
 .event-about {
@@ -161,4 +182,204 @@ main{
     margin-bottom: 4%;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.event-info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* margin: 20px;
+    padding: 20px; */
+}
+
+.banner-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.banner-info-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #F07C00;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    background-color: #FFECD1;
+    padding: 10px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    opacity: 0.75;
+}
+
+.event-date {
+    font-size: 36px;
+    text-transform: uppercase;
+    /* Transforma o texto em letras maiúsculas */
+    font-weight: bold;
+    /* Torna o texto em negrito */
+    color: #663300;
+    text-align: center;
+}
+
+.option1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    /* Transforma o texto em letras maiúsculas */
+    color: #e9c29c;
+    text-align: center;
+    text-decoration: line-through 1px #000;
+    margin-bottom: 1px;
+}
+
+.option2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    /* Transforma o texto em letras maiúsculas */
+    color: #e9c29c;
+    text-align: center;
+    text-decoration: line-through 1px #000;
+    margin-bottom: 1px;
+}
+
+.option3 {
+    font-size: 24px;
+    text-transform: uppercase;
+    /* Transforma o texto em letras maiúsculas */
+    font-weight: bold;
+    /* Torna o texto em negrito */
+    color: #663300;
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.option4 {
+    font-size: 24px;
+    text-transform: uppercase;
+    /* Transforma o texto em letras maiúsculas */
+    color: #e9c29c;
+    text-align: center;
+
+}
+
+.event-place {
+    font-size: 24px;
+    text-transform: uppercase;
+    /* Transforma o texto em letras maiúsculas */
+    font-weight: bold;
+    /* Torna o texto em negrito */
+    color: #663300;
+    text-align: center;
+}
+
+.event-detail {
+    font-size: 18px;
+    text-transform: uppercase;
+    /* Transforma o texto em letras maiúsculas */
+    color: #663300;
+    text-align: center;
+}
+
+.banner-contact {
+    background-color: #FFECD1;
+    padding: 50px;
+    text-align: center;
+}
+
+.banner-contact h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #8E4700;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 500px;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    /* Defina a largura desejada */
+}
+
+.btn-enviar {
+    background-color: #F07C00;
+    color: #8E4700;
+    padding: 10px 30px;
+    border: 4px solid #8E4700;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+    align-items: center;
+    text-transform: uppercase;
+    /* Transforma o texto em letras maiúsculas */
+    font-weight: bold;
+    /* Torna o texto em negrito */
+}
+
+.btn-enviar:hover {
+    background-color: #8E4700;
+    color: #F07C00;
+    border: 4px solid #F07C00;
+}
+
+.btn-enviar a {
+    color: #8E4700;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+
+}
+
+.footer p {
+    margin: 0;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.social-icons {
+    float: left;
+    margin-left: 10px;
+}
+
+.footer-logo img {
+    float: right;
+    width: 150px;
+    height: auto;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 10px;
 }
